@@ -1,0 +1,806 @@
+/* RESET Y ESTILOS GLOBALES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff007f;
+}
+
+/* HERO HEADER */
+.hero-header {
+  position: relative;
+  height: 100vh;
+  background: url('img/LXcfuOm782ATsihZC-b1f.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align:left;
+  color: #fff;
+  background-attachment: fixed;
+  filter: brightness(0.6);
+}
+
+.hero-header .content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-header .title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ff007f;
+  margin-bottom: 20px;
+}
+
+.hero-header .subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  
+}
+
+.hero-header .description {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  max-width: 700px;
+  color: white(255, 255, 255, 0.8);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff007f;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e60073;
+  transform: scale(1.1);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 2px solid #ff007f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  background: #000;
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 2px solid #ff007f;
+}
+
+.logo img {
+  height: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #ff007f;
+  transform: translateY(-5px);
+}
+
+.menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: #ff007f;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu li a {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: background 0.3s ease;
+  }
+
+  .menu-toggle.active .bar {
+    background: #ff007f;
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
+
+
+/* ABOUT SECTION */
+.about-pita {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  color:white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.header-section p {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.about-content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  color:white;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  margin-bottom: 25px;
+  color: white;
+}
+
+.about-text ul {
+  list-style: none;
+  margin-top: 15px;
+;
+}
+
+.about-text ul li {
+  margin-bottom: 12px;
+}
+
+.about-text ul li strong {
+  color: #ff007f;
+}
+
+/* Misión y Visión */
+.mission-vision-section {
+  margin-top: 40px;
+  background: #fff;
+  padding: 60px 20px;
+}
+
+.mission-vision-section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.mission-vision-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+
+
+/* ESTADÍSTICAS */
+.statistics {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.statistics .stats-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.stat-item {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  color: #ff007f;
+  margin-bottom: 15px;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px 20px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+#backToTop {
+  padding: 12px 25px;
+  background: #ff007f;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #e60073;
+  transform: scale(1.1);
+}
+
+/* Navbar Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px 0;
+    z-index: 2;
+  }
+
+  .menu li a {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle.active + .menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-header .title {
+    font-size: 3rem;
+  }
+
+  .hero-header .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+/* Estilos Generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h2, h3 {
+  color: #2c3e50;
+}
+
+/* Sección: Brecha Digital y Ciberseguridad */
+#digital-gap {
+  background-color: #ffffff;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#digital-gap p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Acordeón para brecha digital */
+.accordion h3 {
+  cursor: pointer;
+  margin-top: 10px;
+  color: #3498db;
+}
+
+.accordion p {
+  display: none;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Sección: Soluciones Innovadoras con IA */
+#solutions {
+  background-color: #ecf0f1;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#solutions h2 {
+  font-size: 2rem;
+}
+
+.solution-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(14, 0, 0, 0.1);
+  width: 30%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .solution-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+
+
+/* Botón para redirigir a CiberPaz */
+#goToCiberPaz {
+  background-color: #ff007f; /* Fucsia */
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#goToCiberPaz:hover {
+  background-color: #e60073; /* Fucsia más oscuro */
+  transform: translateY(-2px);
+}
+
+
+
+/* Reset de márgenes y rellenos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales para la página */
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7; /* Color de fondo suave */
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para la sección que contiene todo el contenido */
+#digital-gap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Diseño adaptable */
+  gap: 20px;
+  padding: 40px 20px;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Estilos para los bloques de contenido */
+#digital-gap .content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Estilo para los títulos */
+#digital-gap .content h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Estilo para los párrafos */
+#digital-gap .content p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Hace que el contenido crezca para llenar el espacio disponible */
+  line-height: 1.5;
+}
+
+/* Estilo para los botones rosados */
+#digital-gap .content button {
+  background-color: #ff66b2; /* Color rosado */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  align-self: center; /* Alinea el botón en el centro */
+  text-transform: uppercase; /* Hace que el texto sea en mayúsculas */
+  letter-spacing: 1px;
+}
+
+/* Efecto hover para los botones rosados */
+#digital-gap .content button:hover {
+  background-color: #e6008f; /* Color rosado más oscuro */
+}
+
+/* Efecto hover en los bloques */
+#digital-gap .content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  #digital-gap {
+    grid-template-columns: 1fr; /* Los bloques se apilan en una sola columna */
+    padding: 20px 10px;
+  }
+
+  #digital-gap .content {
+    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #digital-gap .content h3 {
+    font-size: 20px; /* Ajuste en el tamaño del título */
+  }
+
+  #digital-gap .content p {
+    font-size: 14px; /* Ajuste en el tamaño del texto */
+  }
+
+  #digital-gap .content button {
+    padding: 10px 20px; /* Ajuste en el tamaño del botón */
+  }
+}
+
+/*  estilos  papra recomendador de cursos 
+
+/* Ajustes generales para la sección */
+#solutions {
+  font-family: 'Arial', sans-serif;
+  margin: 2rem auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%; /* Se ajusta automáticamente al ancho de la página */
+}
+
+#solutions h2 {
+  font-size: 2rem;
+  color:  #ff007f;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#solutions h3 {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#solutions p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Estilos específicos del recomendador */
+#beta-recommender {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#interest-input, #platform-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#recommend-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#recommend-button:hover {
+  background-color: #ff007f;
+}
+
+/* Estilo del cuadro de recomendaciones */
+#recommendations-box {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Historial de recomendaciones */
+#history-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color:  whitesmoke;
+  border: 1px solid  white;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#history-box p {
+  margin-bottom: 10px;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  #solutions {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  #recommend-button {
+    font-size: 0.9rem;
+  }
+}
+/* Estilo general para la sección */
+.solutions-section {
+  background-color: #f9f9f9; /* Fondo claro para resaltar la sección */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados para un diseño moderno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center; /* Centrar el contenido de la sección */
+}
+
+/* Estilo para el título */
+.solutions-section h2 {
+  font-family: 'Arial', sans-serif; /* Fuente clara y profesional */
+  font-size: 24px; /* Tamaño de fuente grande */
+  color:  ff007f; /* Color oscuro para buena legibilidad */
+  margin-bottom: 15px;
+}
+
+/* Estilo para el párrafo */
+.solutions-text {
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+  font-size: 16px; /* Tamaño de fuente mediano */
+  line-height: 1.5; /* Espaciado entre líneas */
+  color: #555; /* Gris oscuro para menos contraste que el título */
+  max-width: 600px; /* Ancho máximo para textos largos */
+  margin: 0 auto; /* Centrar el párrafo horizontalmente */
+}

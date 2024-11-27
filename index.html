@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PITA - Plataforma Innovadora</title>
+    <link rel="icon" href="img/Logo_PITA.png" type="image/png">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Header con Menú Desplegable -->
+    <header class="hero-header">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/Logo_PITA.png" alt="Logo PITA" />
+        </div>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Acerca de</a></li>
+         <li><a href="#solutions">Soluciones IA</a></li>
+         
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+      <div class="overlay"></div>
+      <div class="content">
+        <h1 class="title">PITA</h1>
+        <h2 class="subtitle">Plataforma Innovadora de Teletrabajo Asistido</h2>
+        <p class="description">
+          PITA es una plataforma innovadora que empodera a las mujeres en el
+          teletrabajo, creando un entorno laboral remoto seguro y equitativo.
+          <span></span>
+        </p>
+        <a href="#solutions" class="cta-button">Descubre más</a>
+      </div>
+    </header>
+
+    <
+
+    <!-- Script JavaScript -->
+    <script>
+      // Función para alternar la visibilidad de las tarjetas
+      function toggleCard(id) {
+        const cardBody = document.getElementById(id);
+
+        // Si la tarjeta está abierta, cerrarla
+        if (cardBody.classList.contains("active")) {
+          cardBody.classList.remove("active");
+        } else {
+          // Abrir la tarjeta con un efecto de deslizamiento
+          const allCards = document.querySelectorAll(".card-body");
+          allCards.forEach((card) => card.classList.remove("active")); // Cerrar todas las tarjetas abiertas
+          cardBody.classList.add("active");
+        }
+      }
+    </script>
+
+    <section id="digital-gap">
+      <!-- Bloque 1: Conectando con el Hackathon CiberPaz -->
+      <div class="content">
+        <h3>Conectando con el Hackathon CiberPaz (MinTic)</h3>
+        <p>
+          Esta iniciativa busca empoderar a las mujeres que fomenta la
+          empleabilidad y el cierre de la brecha digital, promoviendo su
+          inclusión en el ámbito tecnológico.
+        </p>
+        <button
+          onclick="window.location.href='https://ciberpaz.gov.co/portal/';"
+        >
+          Conoce más sobre CiberPaz
+        </button>
+      </div>
+
+      <!-- Bloque 2: Herramientas TIC para el trabajo incluyente y seguro -->
+      <div class="content">
+        <h3>Herramientas TIC para el trabajo incluyente y seguro</h3>
+        <p>
+          Accede a herramientas esenciales y tutoriales prácticos diseñados para
+          mujeres que buscan potenciar su desempeño en el teletrabajo y el
+          aprendizaje digital.
+        </p>
+        <button onclick="window.location.href='Herramientas.html';">
+          Conoce más sobre Herramientas
+        </button>
+      </div>
+
+      <!-- Bloque 3: Uso de la inteligencia artificial y las tecnologías innovadoras -->
+      <div class="content">
+        <h3>Uso de la inteligencia artificial y las Tecnologías innovadoras</h3>
+        <p>
+          Te invitamos a conocer las diferentes aplicaciones de la inteligencia
+          artificial en los diversos campos de trabajo y cómo estas están
+          transformando las industrias.
+        </p>
+        <button onclick="window.location.href='https://www.toolify.ai/es/';">
+          Conoce más sobre IA
+        </button>
+      </div>
+
+      <!-- Bloque 4: Módulo de sensibilización en mujeres en trabajo remoto -->
+      <div class="content">
+        <h3>Módulo de sensibilización en mujeres en trabajo remoto</h3>
+        <p>
+          Promover el trabajo remoto inclusivo para mujeres, ayudando a derribar
+          barreras y ofreciendo herramientas y oportunidades en el mundo
+          digital.
+        </p>
+        <button onclick="window.location.href='https://ciberpaz.gov.co/';">
+          Conoce más sobre CiberPaz
+        </button>
+      </div>
+    </section>
+
+
+
+<!-- Sección: Soluciones Innovadoras con IA -->
+<section id="solutions" class="solutions-section">
+  <h2>Soluciones Innovadoras con IA</h2>
+  <p class="solutions-text">
+    Descubre herramientas basadas en Inteligencia Artificial. Explora el recomendador de cursos diseñado para ti.
+  </p>
+</section>
+  <!-- Recomendador de Cursos -->
+  <div id="beta-recommender">
+    <h3>Recomendador de Cursos - Versión Beta</h3>
+    <label for="interest-input">Escribe tus intereses:</label>
+    <textarea id="interest-input" placeholder="Ejemplo: programación, IA, diseño gráfico..."></textarea>
+    <label for="platform-select">Selecciona una plataforma:</label>
+    <select id="platform-select">
+      <option value="todas">Todas las plataformas</option>
+      <option value="Coursera">Coursera</option>
+      <option value="Udemy">Udemy</option>
+      <option value="Platzi">Platzi</option>
+      <option value="Edx">Edx</option>
+    </select>
+    <button id="recommend-button">Recomendar Cursos</button>
+    <div id="recommendations-box" class="recommendations-box"></div>
+  </div>
+  <!-- Historial -->
+  <h3>Historial de Recomendaciones</h3>
+  <div id="history-box">
+    <p>No tienes recomendaciones guardadas todavía.</p>
+  </div>
+</section>
+    <!-- Sección: Estadísticas -->
+    <section id="statistics" class="statistics">
+      <h2>Estadísticas del Trabajo Remoto</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3><span class="stat-value" data-target="70">0</span>%</h3>
+          <p>
+            Mujeres que consideran el teletrabajo ideal para balancear la vida
+            laboral y personal.
+          </p>
+        </div>
+        <div class="stat-item">
+          <h3><span class="stat-value" data-target="45">0</span>%</h3>
+          <p>
+            Incremento en la participación femenina en el teletrabajo desde
+            2020.
+          </p>
+        </div>
+        <div class="stat-item">
+          <h3><span class="stat-value" data-target="80">0</span>%</h3>
+          <p>
+            Mujeres que afirman sentirse más productivas trabajando desde casa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Dinámico -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <button id="backToTop">Volver arriba</button>
+      <p>© 2024 PITA - Todos los derechos reservados.</p>
+    </footer>
+    <script>
+      document
+        .getElementById("goToCiberPaz")
+        .addEventListener("click", function () {
+          window.location.href = "https://ciberpaz.gov.co/portal/";
+        });
+    </script>
+
+    <script>
+      // Obtener el botón por su ID
+      const ciberPazButton = document.getElementById("goToCiberPaz");
+
+      // Agregar un evento para mostrar un mensaje temporal al hacer clic
+      ciberPazButton.addEventListener("click", function () {
+        // Redirigir después de 500ms para simular interactividad
+        ciberPazButton.innerText = "Redirigiendo...";
+        ciberPazButton.disabled = true; // Desactiva el botón temporalmente
+
+        setTimeout(() => {
+          window.location.href = "https://www.ciberpaz.org"; // Redirige
+        }, 500); // Espera 500ms
+      });
+
+      // Agregar efectos al pasar el mouse (opcional)
+      ciberPazButton.addEventListener("mouseenter", function () {
+        ciberPazButton.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+      });
+
+      ciberPazButton.addEventListener("mouseleave", function () {
+        ciberPazButton.style.boxShadow = "none";
+      });
+    </script>
+s
+    <script src="script.js"></script>
+  </body>
+</html>
