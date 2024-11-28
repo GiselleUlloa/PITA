@@ -82,17 +82,4 @@ document.getElementById("recommend-button").addEventListener("click", () => {
   const savedRecommendations = JSON.parse(localStorage.getItem("recommendations")) || [];
   savedRecommendations.push({ interests, platform, courses: recommendations });
   localStorage.setItem("recommendations", JSON.stringify(savedRecommendations));
-
-  // Botón para descargar las recomendaciones como archivo JSON
-  const downloadButton = document.createElement("button");
-  downloadButton.textContent = "Descargar recomendaciones";
-  downloadButton.onclick = () => {
-    const blob = new Blob([JSON.stringify(savedRecommendations, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "recomendaciones.json";
-    a.click();
-  };
-  document.getElementById("recommendations-box").appendChild(downloadButton);
 });
