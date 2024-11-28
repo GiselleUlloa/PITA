@@ -86,27 +86,51 @@ Este proyecto es parte del **Hackathon CiberPaz**, organizado por el Ministerio 
 ---
 
 ## Instalación 🔧
- Pasos para Desplegar la Plataforma Localmente 👇
+
+Pasos para Desplegar la Plataforma Localmente 👇
+
 1. **Clonar el Repositorio**:
    ```bash
    git clone https://github.com/GiselleUlloa/PITArecomendadorcursosOpenAI.git
+
+ ## Tecnologías Utilizadas 🛠️
+
+Este proyecto utiliza una variedad de tecnologías web modernas para su desarrollo y despliegue. Las principales tecnologías utilizadas incluyen:
+
+- **HTML5**: Lenguaje de marcado utilizado para estructurar el contenido web.
+- **CSS3**: Lenguaje de estilos utilizado para diseñar y dar formato a la interfaz de usuario.
+- **JavaScript (JS)**: Lenguaje de programación utilizado para agregar interactividad y dinamismo a la interfaz web.
+- **Node.js**: Entorno de ejecución para JavaScript que permite desarrollar aplicaciones del lado del servidor.
+- **OpenAI API**: API utilizada para integrar la inteligencia artificial de OpenAI, brindando recomendaciones personalizadas y asistencia automatizada.
+- **GitHub Pages**: Servicio de hosting de sitios web estáticos que permite publicar tu proyecto directamente desde un repositorio de GitHub.
+- **Netlify**: Plataforma de hosting para aplicaciones web, utilizada para el despliegue y administración del proyecto en la nube.
+
 ---
 
-## Enlaces Importantes 🔗
+# Enlaces Importantes 🔗
 
- GitHub Pages https://giselleulloa.github.io/PITArecomendadorcursosOpenAI/
- Pagina Web PITA https://pita1.netlify.app/
- Repositorio github  https://github.com/GiselleUlloa/PITArecomendadorcursosOpenAI
+Aquí se encuentran algunos enlaces clave relacionados con el proyecto y las herramientas utilizadas:
 
---
-  ## Contribución 👩‍💻👨‍💻
-¡Las contribuciones son muy bienvenidas! Si deseas colaborar con el proyecto, sigue estos pasos:
-Haz un Fork del Repositorio:
-Dirígete al repositorio en GitHub y haz clic en el botón "Fork".
-Crea una Rama Nueva:
-Usa el siguiente comando para crear una nueva rama desde main:
-   ```bash
-git checkout -b feature/nueva-funcionalidad ´´
+- **Repositorio en GitHub**: [https://github.com/GiselleUlloa/PITArecomendadorcursosOpenAI](https://github.com/GiselleUlloa/PITArecomendadorcursosOpenAI)
+- **Página Web del Proyecto (Desplegada en Netlify)**: [https://pita1.netlify.app](https://pita1.netlify.app)
+- **GitHub Pages del Proyecto**: [https://giselleulloa.github.io/PITArecomendadorcursosOpenAI/](https://giselleulloa.github.io/PITArecomendadorcursosOpenAI/)
+- **Documentación de OpenAI API**: [https://beta.openai.com/docs/](https://beta.openai.com/docs/)
+- **Documentación de Node.js**: [https://nodejs.org/es/docs/](https://nodejs.org/es/docs/)
+- **Guía de Implementación de GitHub Pages**: [https://docs.github.com/en/pages](https://docs.github.com/en/pages)
+- **Documentación de Netlify**: [https://docs.netlify.com/](https://docs.netlify.com/)
 
+# Contribución 🤝
 
-## En
+¡Gracias por tu interés en contribuir a este proyecto! Aquí te explicamos cómo puedes ayudar a mejorar la **Plataforma Inclusiva de Teletrabajo Asistido (PITA)** y ser parte de su desarrollo.
+
+## Pasos para Contribuir 🚀
+
+### 1. **Fork el Repositorio** 🍴
+Haz un fork del repositorio para crear tu propia copia del proyecto y poder trabajar en él de manera independiente.
+
+### 2. **Clona el Repositorio** 💻
+Una vez que hayas hecho el fork, clona el repositorio a tu máquina local:
+
+```bash
+git clone https://github.com/TuUsuario/PITArecomendadorcursosOpenAI.git
+
