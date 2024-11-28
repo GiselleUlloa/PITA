@@ -91,6 +91,14 @@ Este proyecto es parte del **Hackathon CiberPaz**, organizado por el Ministerio 
    ```bash
    git clone https://github.com/GiselleUlloa/PITArecomendadorcursosOpenAI.git
 ---
+
+## Enlaces Importantes 🔗
+
+ GitHub Pages https://giselleulloa.github.io/PITArecomendadorcursosOpenAI/
+ Pagina Web PITA https://pita1.netlify.app/
+ Repositorio github  https://github.com/GiselleUlloa/PITArecomendadorcursosOpenAI
+
+--
   ## Contribución 👩‍💻👨‍💻
 ¡Las contribuciones son muy bienvenidas! Si deseas colaborar con el proyecto, sigue estos pasos:
 Haz un Fork del Repositorio:
@@ -98,12 +106,7 @@ Dirígete al repositorio en GitHub y haz clic en el botón "Fork".
 Crea una Rama Nueva:
 Usa el siguiente comando para crear una nueva rama desde main:
    ```bash
-git checkout -b feature/nueva-funcionalidad
-
----
-
-  ## Contribución 👩‍💻👨‍💻 Enlaces Importantes 🔗
-1 pagina Web desplegada :https://pita1.netlify.app/
-2 Github  pages :https://giselleulloa.github.io/PITArecomendadorcursosOpenAI/
+git checkout -b feature/nueva-funcionalidad ´´
 
 
+## En
