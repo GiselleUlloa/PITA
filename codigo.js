@@ -10,30 +10,30 @@ document.getElementById("recommend-button").addEventListener("click", () => {
   }
 
   // Validar que se haya seleccionado una plataforma
-  if (platform === "") {
+  if (!platform) {
     alert("Por favor, selecciona una plataforma.");
     return;
   }
 
-  // Función para generar recomendaciones basadas en los intereses y plataforma seleccionada
+  // Función para generar recomendaciones con enlaces
   const generateRecommendations = (interests, platform) => {
-    // Definir los cursos disponibles por plataforma
+    // Definir los cursos disponibles por plataforma con enlaces
     const courses = {
       Coursera: [
-        `Introducción a ${interests} en Coursera`,
-        `Avanzado en ${interests} en Coursera`
+        { title: `Introducción a ${interests} en Coursera`, link: "https://www.coursera.org" },
+        { title: `Avanzado en ${interests} en Coursera`, link: "https://www.coursera.org" }
       ],
       Udemy: [
-        `Fundamentos de ${interests} en Udemy`,
-        `Proyecto en ${interests} en Udemy`
+        { title: `Fundamentos de ${interests} en Udemy`, link: "https://www.udemy.com" },
+        { title: `Proyecto en ${interests} en Udemy`, link: "https://www.udemy.com" }
       ],
       Platzi: [
-        `Desarrollo de ${interests} en Platzi`,
-        `Taller práctico de ${interests} en Platzi`
+        { title: `Desarrollo de ${interests} en Platzi`, link: "https://platzi.com" },
+        { title: `Taller práctico de ${interests} en Platzi`, link: "https://platzi.com" }
       ],
       Edx: [
-        `Curso completo de ${interests} en Edx`,
-        `Certificación en ${interests} en Edx`
+        { title: `Curso completo de ${interests} en Edx`, link: "https://www.edx.org" },
+        { title: `Certificación en ${interests} en Edx`, link: "https://www.edx.org" }
       ]
     };
 
@@ -56,17 +56,18 @@ document.getElementById("recommend-button").addEventListener("click", () => {
 
   // Si no hay recomendaciones, mostrar mensaje
   if (recommendations.length === 0) {
-    document.getElementById("recommendations-box").innerHTML = "<p>No se encontraron recomendaciones para los intereses seleccionados.</p>";
+    document.getElementById("recommendations-box").innerHTML = 
+      "<p>No se encontraron recomendaciones para los intereses seleccionados.</p>";
     return;
   }
 
   // Mostrar las recomendaciones en el contenedor
   let recommendationsHTML = `<h3>Recomendaciones:</h3><ul>`;
   recommendations.forEach(course => {
-    recommendationsHTML += `<li>${course}</li>`;
+    recommendationsHTML += `<li><a href="${course.link}" target="_blank">${course.title}</a></li>`;
   });
   recommendationsHTML += `</ul>`;
-  
+
   // Insertar las recomendaciones en el contenedor
   document.getElementById("recommendations-box").innerHTML = recommendationsHTML;
 });
