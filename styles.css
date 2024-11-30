@@ -804,98 +804,83 @@ body, html {
   max-width: 600px; /* Ancho máximo para textos largos */
   margin: 0 auto; /* Centrar el párrafo horizontalmente */
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
 
-/* Contenedor principal */
 #modulo-sensibilizacion {
-  background-color: #fff; /* Fondo blanco para profesionalismo */
-  border: 2px solid #f500a8; /* Resaltado en fucsia */
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
   border-radius: 10px;
-  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   max-width: 800px;
   margin: 40px auto;
+  color: #333333;
+}
+
+h2 {
+  color: #ff00ff; /* Fucsia */
   text-align: center;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
-/* Título */
-#modulo-sensibilizacion h2 {
-  font-size: 2rem;
-  color: #f500a8; /* Fucsia brillante */
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-/* Descripción */
-#modulo-sensibilizacion .intro {
-  font-size: 1.2rem;
-  color: #333; /* Negro suave */
-  margin-bottom: 25px;
+.intro {
+  font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* Lista de beneficios */
-#modulo-sensibilizacion .benefits {
+.benefits {
   list-style: none;
   padding: 0;
-  margin-bottom: 25px;
+  margin: 20px 0;
+  color: #000;
 }
 
-#modulo-sensibilizacion .benefits li {
+.benefits li {
   font-size: 1rem;
-  color: #444; /* Negro neutral */
-  margin: 10px 0;
-  text-align: left;
-  line-height: 1.5;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
 }
 
-#modulo-sensibilizacion .benefits li::before {
-  content: "✔";
-  color: #f500a8; /* Fucsia para íconos */
-  font-weight: bold;
+.benefits li::before {
+  content: '✔️';
   margin-right: 10px;
+  color: #ff00ff;
 }
 
-/* Botón de llamada a la acción */
-#modulo-sensibilizacion .cta {
-  margin-top: 20px;
+.cta {
+  text-align: center;
+  margin: 20px 0;
 }
 
-#modulo-sensibilizacion .cta p {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-#modulo-sensibilizacion button {
-  padding: 12px 25px;
-  background-color: #f500a8; /* Fucsia vibrante */
-  color: #fff; /* Texto blanco */
+.cta button {
+  background-color: #ff00ff;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
   font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(245, 0, 168, 0.3);
+  transition: background-color 0.3s ease;
 }
 
-#modulo-sensibilizacion button:hover {
-  background-color: #d4008e; /* Fucsia más oscuro */
-  box-shadow: 0 6px 15px rgba(212, 0, 142, 0.4);
+.cta button:hover {
+  background-color: #cc00cc;
 }
 
-/* Contador */
 #contador-visitas {
-  margin-top: 20px;
   font-size: 1rem;
-  color: #666;
+  text-align: center;
+  color: #333333;
 }
 
-#contador-visitas strong {
-  color: #f500a8; /* Destacar el texto */
-}
+
+
 
