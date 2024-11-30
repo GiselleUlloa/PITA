@@ -171,7 +171,7 @@ document.getElementById('boton-ingreso-formulario').addEventListener('click', ()
 
   // Redirigir con parámetros UTM para seguimiento
   window.location.href =
-    'https://ciberpaz.gov.co/formulario/?utm_source=pagina&utm_medium=modulo&utm_campaign=sensibilizacion';
+    'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public';
 });
 
 
