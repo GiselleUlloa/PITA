@@ -157,25 +157,40 @@ document.styleSheets[0].insertRule(`
 // contADOR
 // Inicializar el contador
 // Inicializar contador desde almacenamiento local
-let visitas = localStorage.getItem('contador') || 0;
 
-// Mostrar visitas al cargar
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('contador').textContent = visitas;
+// Seleccionamos el botón y el contador
+const botonFormulario = document.getElementById('boton-ingreso-formulario');
+const contador = document.getElementById('contador');
+
+// Inicializamos el contador de visitas en localStorage (si no existe)
+if (!localStorage.getItem('visitas')) {
+  localStorage.setItem('visitas', '0');
+} else {
+  contador.innerText = localStorage.getItem('visitas');
+}
+
+// Función para manejar el clic en el botón
+botonFormulario.addEventListener('click', () => {
+  // Incrementamos el contador de visitas
+  let visitas = parseInt(localStorage.getItem('visitas')) + 1;
+  localStorage.setItem('visitas', visitas.toString());
+  
+  // Actualizamos el contador en el HTML
+  contador.innerText = visitas;
+  
+  // Enviar el evento de Google Analytics
+  gtag('event', 'clic_formulario', {
+    'event_category': 'Formulario',
+    'event_label': 'Llenar formulario CiberPaz',
+    'value': visitas
+  });
+
+  // Opcional: Redirigir al formulario (puedes personalizar esta acción)
+  window.location.href = 'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public
+'; // Reemplaza con la URL del formulario
 });
 
-// Manejo del botón
-document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
-  // Incrementar el contador
-  visitas++;
-  localStorage.setItem('contador', visitas);
-  document.getElementById('contador').textContent = visitas;
 
-  // Redirigir al formulario
-  window.location.href =
-    '   https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public
-';
-});
 
 
 
