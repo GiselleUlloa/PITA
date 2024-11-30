@@ -133,44 +133,52 @@
     </p>
   </div>
 </section>
-    <script>
-  // Función para actualizar el contador en la página
-  function actualizarContador() {
-    let accesos = localStorage.getItem('accesosFormulario');
-
-    if (!accesos) {
-      accesos = 0; // Si no existe el contador, inicializamos a 0
-    }
-
-    // Mostrar el número de personas interesadas
-    document.getElementById('contador').textContent = accesos;
+   // Función para actualizar el contador en la página
+function actualizarContador() {
+  // Obtener el número de accesos desde el localStorage
+  let accesos = localStorage.getItem('accesosFormulario');
+  
+  // Si no existe, inicializamos a 0
+  if (!accesos) {
+    accesos = 0;
   }
 
-  // Al cargar la página, mostramos el número actual de accesos
-  window.addEventListener('DOMContentLoaded', actualizarContador);
+  // Mostrar el número de personas interesadas
+  document.getElementById('contador').textContent = accesos;
+}
 
-  // Añadimos el evento de clic al botón
-  document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
-    // Obtener el número de accesos desde el localStorage
-    let accesos = localStorage.getItem('accesosFormulario');
-    // Si no existe, inicializamos a 0
-    if (!accesos) {
-      accesos = 0;
-    }
+// Al cargar la página, mostramos el número actual de accesos
+window.addEventListener('DOMContentLoaded', () => {
+  // Mostrar el contador actual en la carga de la página
+  actualizarContador();  
 
-    // Incrementar el contador
-    accesos = parseInt(accesos) + 1;
+  // Configurar un intervalo para actualizar el contador cada 1 segundo
+  setInterval(actualizarContador, 1000);  // Actualiza el contador cada 1 segundo
+});
 
-    // Guardar el nuevo valor en el localStorage
-    localStorage.setItem('accesosFormulario', accesos);
+// Añadimos el evento de clic al botón para registrar el acceso
+document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
+  // Obtener el número de accesos desde el localStorage
+  let accesos = localStorage.getItem('accesosFormulario');
+  
+  // Si no existe, inicializamos a 0
+  if (!accesos) {
+    accesos = 0;
+  }
 
-    // Actualizar el contador visualmente en la página
-    document.getElementById('contador').textContent = accesos;
+  // Incrementar el contador
+  accesos = parseInt(accesos) + 1;
 
-    // Redirigir al formulario
-window.location.href = 'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public';
-  });
-</script>
+  // Guardar el nuevo valor en el localStorage
+  localStorage.setItem('accesosFormulario', accesos);
+
+  // Actualizar el contador visualmente en la página
+  document.getElementById('contador').textContent = accesos;
+
+  // Redirigir al formulario
+  window.location.href = 'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public';
+});
+
     
 
 <!-- Sección: Soluciones Innovadoras con IA -->
