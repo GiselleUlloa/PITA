@@ -133,8 +133,21 @@
     </p>
   </div>
 </section>
+    <script>
+document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
+  let accesos = localStorage.getItem('accesosFormulario');
 
-    
+  if (!accesos) {
+    accesos = 0;
+  }
+
+  accesos = parseInt(accesos) + 1;
+  localStorage.setItem('accesosFormulario', accesos);
+
+  window.location.href = 'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public';
+});
+</script>
+
 <!-- Sección: Soluciones Innovadoras con IA -->
 <section id="solutions" class="solutions-section">
   <h2>Soluciones Innovadoras con IA</h2>
