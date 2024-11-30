@@ -154,7 +154,26 @@ document.styleSheets[0].insertRule(`
 
 
 
-// API  IA
+// contADOR
+// Inicializar el contador
+let visitas = localStorage.getItem('contador') || 0;
+
+// Mostrar visitas al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('contador').textContent = visitas;
+});
+
+// Incrementar contador y redirigir al formulario
+document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
+  visitas++;
+  localStorage.setItem('contador', visitas);
+  document.getElementById('contador').textContent = visitas;
+
+  // Redirigir con parámetros UTM para seguimiento
+  window.location.href =
+    'https://ciberpaz.gov.co/formulario/?utm_source=pagina&utm_medium=modulo&utm_campaign=sensibilizacion';
+});
+
 
  
       
