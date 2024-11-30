@@ -153,29 +153,27 @@ document.styleSheets[0].insertRule(`
 `, document.styleSheets[0].cssRules.length);
 
 
-
 // contADOR
 // Inicializar el contador
 // Inicializar contador desde almacenamiento local
-
 document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
-  // Recuperamos el número de accesos desde localStorage
+  console.log('Botón presionado');  // Esto te ayudará a saber si el evento se está activando
+  
   let accesos = localStorage.getItem('accesosFormulario');
-
-  // Si no existe, lo inicializamos en 0
   if (!accesos) {
     accesos = 0;
   }
-
-  // Incrementamos el número de accesos
   accesos = parseInt(accesos) + 1;
-
-  // Guardamos el nuevo número en localStorage
   localStorage.setItem('accesosFormulario', accesos);
 
-  // Redirigir al formulario
   window.location.href = 'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public';
 });
+
+
+
+
+
+
 
 
 
