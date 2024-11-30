@@ -156,23 +156,28 @@ document.styleSheets[0].insertRule(`
 
 // contADOR
 // Inicializar el contador
+// Inicializar contador desde almacenamiento local
 let visitas = localStorage.getItem('contador') || 0;
 
-// Mostrar visitas al cargar la página
+// Mostrar visitas al cargar
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('contador').textContent = visitas;
 });
 
-// Incrementar contador y redirigir al formulario
+// Manejo del botón
 document.getElementById('boton-ingreso-formulario').addEventListener('click', () => {
+  // Incrementar el contador
   visitas++;
   localStorage.setItem('contador', visitas);
   document.getElementById('contador').textContent = visitas;
 
-  // Redirigir con parámetros UTM para seguimiento
+  // Redirigir al formulario
   window.location.href =
-    'https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public';
+    '   https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public
+';
 });
+
+
 
 
  
